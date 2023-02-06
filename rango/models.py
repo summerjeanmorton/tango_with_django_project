@@ -13,9 +13,9 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'categories'
-    
+
     def __str__(self):
-        return self.name
+        return str(self.name)
 
 class Page(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
@@ -24,4 +24,4 @@ class Page(models.Model):
     views = models.IntegerField(default=0)
 
     def __str__(self):
-        return self.title
+        return str(self.title)
